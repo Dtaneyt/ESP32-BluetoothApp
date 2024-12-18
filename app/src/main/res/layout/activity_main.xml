@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/light_blue"
     tools:context=".MainActivity">
 
     <TextView
@@ -15,6 +16,7 @@
         android:textAlignment="center"
         android:textSize="24sp"
         android:padding="10dp"
+        android:textColor="@color/cream"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tab" />
@@ -23,6 +25,7 @@
         android:id="@+id/select_device_list"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:textColor="@color/cream"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title"
@@ -37,6 +40,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:text="Recargar"
+        android:backgroundTint="@color/blue"
+        android:textColor="@color/cream"
         android:textSize="24sp"
         android:layout_marginTop="14dp"
         android:layout_marginBottom="22dp"
@@ -47,7 +52,7 @@
         android:id="@+id/tab"
         android:layout_width="0dp"
         android:layout_height="27dp"
-        android:background="#5c5c5c"
+        android:background="@color/blue"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
