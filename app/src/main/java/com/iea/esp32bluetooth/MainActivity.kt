@@ -15,8 +15,10 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.iea.esp32bluetooth.databinding.ActivityMainBinding
 
+// Primera actividad - Seleccionar dispositivo Bluetooth
+
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding // Declaración .xml con ViewBinding
     private lateinit var m_bluetoothAdapter: BluetoothAdapter
     private lateinit var m_pairedDevices: Set<BluetoothDevice>
 
@@ -34,10 +36,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         checkAndRequestPermissions()
-
         binding.selectDeviceRefresh.setOnClickListener { pairedDevicesList() }
     }
 
+    // Chequea si tiene los permisos adecuados
     private fun checkAndRequestPermissions() {
         val permissions = arrayOf(
             Manifest.permission.BLUETOOTH,
@@ -54,6 +56,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    // Actua en base a los permisos
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<String>,
@@ -69,6 +72,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    // Hace la lista de dispositivos emparejados y los muestra en la lista
     private fun pairedDevicesList() {
         if (ActivityCompat.checkSelfPermission(
                 this,
@@ -89,6 +93,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        // Pasa a la siguiente actividad al elegir dispositivo
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, list)
         binding.selectDeviceList.adapter = adapter
         binding.selectDeviceList.onItemClickListener =
